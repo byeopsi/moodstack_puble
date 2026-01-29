@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.h1 {
+  @apply text-4xl font-extrabold text-gray-900 tracking-tighter p-5 mb-5;
+}
+
+.card {
+  @apply w-full mb-7;
+}
+
+.card-header {
+  @apply flex items-center justify-between bg-transparent;
+}
+
+.card-body {
+  @apply  min-h-52 bg-white rounded-xl rounded-tl-none overflow-y-hidden overflow-x-hidden;
+}
+
+.card-title {
+  @apply bg-gray-900 py-2 px-6 rounded-tr-2xl text-white;
+}
+
+.card-btns {
+  @apply text-gray-900 pr-3;
+}
+
+.todo-card-body {
+  @apply p-7 flex flex-col max-h-52;
+}
+
+.todo {
+  @apply flex gap-3 p-0.5;
+}
+
+.diary-card-body {
+  @apply p-7 flex justify-start items-center gap-3 ;
+}
+
+.diary {
+  @apply flex flex-col bg-gray-200 rounded-3xl min-w-40 min-h-48 max-h-48 p-3 overflow-hidden;
+}
+
+.diary-content {
+  @apply overflow-y-hidden;
+}
+.diary-btns {
+  @apply text-right flex justify-end items-center pr-1 mt-auto;
+}
+
+.challenge-card-body {
+  @apply p-7 flex justify-start items-center gap-6;
+}
+
+.challenge {
+  @apply flex flex-col gap-3 items-center justify-center p-1 rounded-3xl bg-gray-200 min-w-60 min-h-48 max-h-48;
+}
+
+.challenge-contents{
+  @apply flex mb-auto items-center justify-end gap-1;
+}
+
+.challenge-charts {
+  @apply min-w-28;
+}
+
+.chart {
+  @apply w-36;
+}
+
+.challenge-btns {
+  @apply flex flex-col justify-end items-center;
+}
+
+.challenge-btn {
+  @apply px-1 pt-1.5 w-10 h-10;
+}
+
+.monthly-card-body {
+  @apply p-7;
+}
+
+.monthly {
+  @apply bg-gray-200 min-h-48;
+}
+
