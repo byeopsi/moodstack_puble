@@ -28,4 +28,47 @@ body {
 /** Google Icons **/
 .material-symbols-outlined {
   font-size: 20px !important;
+  cursor: pointer;
+}
+
+/** FullCalendar **/
+.fc-today-button {
+  background-color: #9ca3af !important;
+  border: #9ca3af !important;
+}
+
+.fc-today-button:hover {
+  background-color: #111827 !important;
+}
+
+.fc-button-group button {
+  background-color: #fff !important;
+  border-color: #fff !important;
+  color: #111827;
+}
+
+.fc-button-group button:hover {
+  background-color: #9ca3af !important;
+  border: #9ca3af !important;
+}
+
+.fc-event-main {
+  border-radius: 10%;
+}
+
+.fc-event.fc-event-start.fc-event-end.fc-daygrid-event.fc-h-event {
+  background-color: #9ca3af !important;
+  border: none !important;
+}
+
+/** todos **/
+.done input {
+  accent-color: #9ca3af;
+}
+.done span {
+  color: #9ca3af;
+}
+.done span:first-of-type {
+  -webkit-text-decoration: line-through #9ca3af;
+          text-decoration: line-through #9ca3af;
 }/*# sourceMappingURL=main.css.map */

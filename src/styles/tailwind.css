@@ -15,7 +15,11 @@
 }
 
 .card-body {
-  @apply  min-h-52 bg-white rounded-xl rounded-tl-none overflow-y-hidden overflow-x-hidden;
+  @apply relative min-h-52 bg-white rounded-xl rounded-tl-none overflow-x-scroll;
+}
+
+.card-body::-webkit-scrollbar {
+  @apply hidden;
 }
 
 .card-title {
@@ -26,6 +30,7 @@
   @apply text-gray-900 pr-3;
 }
 
+/** Todo **/
 .todo-card-body {
   @apply p-7 flex flex-col max-h-52;
 }
@@ -34,6 +39,26 @@
   @apply flex gap-3 p-0.5;
 }
 
+
+.add-todo-div #todo-title {
+  @apply w-full border-none bg-gray-100;
+}
+
+.add-todo-btns {
+  @apply flex justify-center items-center;
+}
+
+.add-todo-btns span {
+  @apply rounded-md;
+}
+
+.add-todo-btns span:hover {
+  @apply bg-gray-100;
+}
+
+
+
+/** diary **/
 .diary-card-body {
   @apply p-7 flex justify-start items-center gap-3 ;
 }
@@ -82,6 +107,21 @@
 }
 
 .monthly {
-  @apply bg-gray-200 min-h-48;
+  @apply bg-gray-200 relative rounded-2xl p-5 overflow-hidden;
+}
+
+
+
+/* 캘린더 모달 */
+#calendar {
+  @apply min-h-[500px] w-full overflow-y-hidden;
+}
+
+.calendar-modal-wrapper {
+  @apply absolute inset-0 justify-center items-center bg-black/40 z-50;
+}
+
+#calendar-modal {
+  @apply bg-white p-6 rounded-2xl shadow-xl flex flex-col gap-3;
 }
 
