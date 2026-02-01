@@ -44,7 +44,7 @@
     <div class="card-header">
       <h2 class="card-title">DIARY</h2>
       <div class="card-btns">
-        <span class="material-symbols-outlined">
+        <span onclick="showAddDiaryDiv()" class="material-symbols-outlined">
           add
         </span>
         <span class="material-symbols-outlined">
@@ -56,49 +56,7 @@
       </div>
     </div>
     <div class="card-body diary-card-body">
-      <div class="diary">
-        <div class="diary-date">
-          <span>260127</span>
-        </div>
-        <div class="diary-content">
-          <p>
-            날씨가 맑습니다. 매일 개발을 하는 것도 일기를 쓰는 것도 쉽지 않습니다.
-            그 다음에 이어질 내용은 숨겨집니다.
-          </p>
-          </div>
-        <div class="diary-btns">
-          <span>✏️</span>
-          <span>X</span>
-        </div>
-      </div>
-      <div class="diary">
-        <div class="diary-date">
-          <span>260127</span>
-        </div>
-        <div class="diary-content">
-          <span>content content...</span>
-          </div>
-        <div class="diary-btns">
-          <span>✏️</span>
-          <span>X</span>
-        </div>
-      </div>
-      <div class="diary">
-        <div class="diary-date">260127</div>
-        <div class="diary-content">content content...</div>
-        <div class="diary-btns">
-          <span>✏️</span>
-          <span>X</span>
-        </div>
-      </div>
-      <div class="diary">
-        <div class="diary-date">260127</div>
-        <div class="diary-content">content content...</div>
-        <div class="diary-btns">
-          <span>✏️</span>
-          <span>X</span>
-        </div>
-      </div>
+      <!-- 다이어리 -->
     </div>
   </div>
   <div id="challenge-container" class="card">
@@ -210,6 +168,8 @@
 </div>
 <!-- todo.js -->
 <script src="./js/todo.js"></script>
+<!-- diary.js -->
+<script src="./js/diary.js"></script>
 <!-- chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="./js/chart.js"></script>

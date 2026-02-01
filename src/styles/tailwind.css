@@ -79,15 +79,30 @@
 }
 
 .diary {
-  @apply flex flex-col bg-gray-200 rounded-3xl min-w-40 min-h-48 max-h-48 p-3 overflow-hidden;
+  @apply flex flex-col bg-gray-200 rounded-3xl min-w-40 min-h-48 max-h-48 p-3 overflow-x-hidden;
 }
 
-.diary-content {
-  @apply overflow-y-hidden;
-}
 .diary-btns {
   @apply text-right flex justify-end items-center pr-1 mt-auto;
 }
+
+.diary-content {
+  @apply overflow-x-hidden mb-auto;
+}
+
+.diary-content-textarea {
+  @apply h-40 resize-none max-w-full overflow-y-hidden overflow-x-hidden outline-none border-none;
+}
+
+.diary-content-phrase {
+  @apply break-words;
+}
+
+.add-diary-div .diary-btns {
+  @apply m-0;
+}
+
+/* challenge */
 
 .challenge-card-body {
   @apply p-7 flex justify-start items-center gap-6;
