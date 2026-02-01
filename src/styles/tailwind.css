@@ -39,6 +39,22 @@
   @apply flex gap-3 p-0.5;
 }
 
+.todo div{
+  @apply ml-auto;
+}
+
+.add-todo-div input {
+  @apply border-none outline-none caret-black;
+}
+
+.todo-title {
+  @apply cursor-default;
+}
+
+
+.todo-title:focus {
+  @apply border-none outline-none caret-transparent;
+}
 
 .add-todo-div #todo-title {
   @apply w-full border-none bg-gray-100;
@@ -55,7 +71,6 @@
 .add-todo-btns span:hover {
   @apply bg-gray-100;
 }
-
 
 
 /** diary **/
