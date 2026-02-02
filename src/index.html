@@ -63,7 +63,7 @@
     <div class="card-header">
       <h2 class="card-title">CHALLENGE</h2>
       <div class="card-btns">
-        <span class="material-symbols-outlined">
+        <span onclick="showAddChallengeDiv()" class="material-symbols-outlined">
           add
         </span>
         <span class="material-symbols-outlined">
@@ -75,66 +75,7 @@
       </div>
     </div>
     <div class="card-body challenge-card-body">
-      <div class="challenge">
-        <span class="challenge-title">물 1L 마시기 챌린지</span>
-        <div class="challenge-contents">
-          <div class="challenge-charts">
-            <canvas id="challenge-chart-1" class="chart"></canvas>
-          </div>
-          <div class="challenge-btns">
-            <button class="challenge-btn bg-gray-300">
-              <span class="material-symbols-outlined">
-                check
-              </span>
-            </button>
-            <button class="challenge-btn bg-gray-400">
-              <span class="material-symbols-outlined">
-                  close_small
-              </span>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="challenge">
-        <span class="challenge-title">매일 운동하기</span>
-        <div class="challenge-contents">
-          <div class="challenge-charts">
-            <canvas id="challenge-chart-2" class="chart"></canvas>
-          </div>
-          <div class="challenge-btns">
-            <button class="challenge-btn bg-gray-300">
-              <span class="material-symbols-outlined">
-                check
-              </span>
-            </button>
-            <button class="challenge-btn bg-gray-400">
-              <span class="material-symbols-outlined">
-                  close_small
-              </span>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="challenge">
-        <span class="challenge-title">코딩 공부하기</span>
-        <div class="challenge-contents">
-          <div class="challenge-charts">
-            <canvas id="challenge-chart-3" class="chart"></canvas>
-          </div>
-          <div class="challenge-btns">
-            <button class="challenge-btn bg-gray-300">
-              <span class="material-symbols-outlined">
-                check
-              </span>
-            </button>
-            <button class="challenge-btn bg-gray-400">
-              <span class="material-symbols-outlined">
-                  close_small
-              </span>
-            </button>
-          </div>
-        </div>
-      </div>
+      <!-- 차트 -->
     </div>
   </div>
   <div id="monthly-container" class="card relative">
@@ -155,21 +96,23 @@
     <div class="card-body monthly-card-body">
       <div class="monthly">
         <div id="calendar"></div>
-        <div id="calendar-modal-wrapper" class="calendar-modal-wrapper hidden">
-          <div id="calendar-modal">
-            <input id="event-title" placeholder="일정 제목" />
-            <button id="save-btn">저장</button>
-          </div>
+        <div id="calendar-modal-wrapper" class="!hidden">
+      <div id="calendar-modal-box">
+        <input id="event-title" placeholder="일정 제목 입력" />
+        <div class="btns">
+          <button id="save-btn">저장</button>
+          <button id="confirm-btn">취소</button>
+          <button id="delete-btn" class="!hidden">삭제</button>
         </div>
       </div>
+    </div>
+      </div>
+    </div>
   </div>
 </div>
-
-</div>
-<!-- todo.js -->
 <script src="./js/todo.js"></script>
-<!-- diary.js -->
 <script src="./js/diary.js"></script>
+<script src="./js/challenge.js"></script>
 <!-- chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="./js/chart.js"></script>

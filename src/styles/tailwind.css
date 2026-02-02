@@ -108,8 +108,21 @@
   @apply p-7 flex justify-start items-center gap-6;
 }
 
+
 .challenge {
   @apply flex flex-col gap-3 items-center justify-center p-1 rounded-3xl bg-gray-200 min-w-60 min-h-48 max-h-48;
+}
+
+.challenge-info {
+  @apply w-full flex pl-5 pr-1 items-center;
+}
+
+.challenge-info .delete-challenge{
+  @apply ml-auto;
+}
+
+.challenge-amount {
+  @apply overflow-y-hidden;
 }
 
 .challenge-contents{
@@ -132,6 +145,9 @@
   @apply px-1 pt-1.5 w-10 h-10;
 }
 
+
+/* 먼슬리 */
+
 .monthly-card-body {
   @apply p-7;
 }
@@ -140,6 +156,9 @@
   @apply bg-gray-200 relative rounded-2xl p-5 overflow-hidden;
 }
 
+#monthly-container .card-body {
+  overflow: visible !important;
+}
 
 
 /* 캘린더 모달 */
@@ -147,11 +166,30 @@
   @apply min-h-[500px] w-full overflow-y-hidden;
 }
 
-.calendar-modal-wrapper {
-  @apply absolute inset-0 justify-center items-center bg-black/40 z-50;
+#calendar-modal-wrapper {
+  @apply absolute inset-0 flex justify-center items-center bg-black/40 z-50;
 }
 
 #calendar-modal {
   @apply bg-white p-6 rounded-2xl shadow-xl flex flex-col gap-3;
+}
+
+#calendar-modal-box {
+  @apply bg-white p-6 rounded-2xl shadow-xl flex flex-col gap-3 relative;
+}
+
+#calendar-modal-box .btns button{
+  @apply bg-gray-100 py-1 px-2 rounded-md;
+}
+
+.fc-button:focus {
+  @apply !outline-none !shadow-none;
+}
+
+.fc-daygrid-day-top a {
+  @apply cursor-pointer;
+}
+.fc-daygrid-event-harness {
+  @apply cursor-pointer;
 }
 
