@@ -12,10 +12,53 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/core/main.css"/>
   <title>MOODSTACK</title>
 </head>
-<body class="h-full w-full flex items-center justify-center">
+<body class="flex items-center justify-center">
 <div id="system-me-app" class="bg-gray-100 flex items-center flex-col h-full w-5/12 p-5 min-w-96">
+  <div id="setting-modal" class="fixed flex h-3/4 w-1/2 bg-white border-2 border-solid rounded-xl z-40">
+    <div id="setting-container" class="flex flex-col justify-start items-center h-full w-full ">
+    <div class="p-5 w-full text-right">
+    <span id="exit-btn" class="material-symbols-outlined">close</span>
+    </div>
+    <h2 class="mb-7 text-2xl">내 정보</h2>
+    <div class= "w-2/3">
+      <form class="flex flex-col gap-3">
+        <div class="flex items-center">
+          <span class="flex-auto">아이디</span>
+          <input class="p-2 rounded-md bg-gray-100" type="text" value="test"/>
+        </div>
+        <div class="hidden justify-end">
+          <span id="id-no" class="hidden text-xs text-red-500">중복된 아이디입니다.</span>
+          <!-- <span id="id-yes" class="hidden text-xs text-green-500">사용가능한 아이디입니다.</span> -->
+        </div>
+        <div class="flex items-center">
+          <span class="flex-auto">비밀번호</span>
+          <input id="password" class="p-2 rounded-md bg-gray-100" type="password"/>
+        </div>
+        <div class="flex items-center">
+          <span class="flex-auto">비밀번호 확인</span>
+          <input id="password-confirm" class="p-2 rounded-md bg-gray-100" type="password"/>
+        </div>
+        <div id="pw-no" class="hidden justify-end">
+          <span class="flex justify-end text-xs text-red-500">비밀번호가 일치하지 않습니다.</span>
+        </div>
+        <div class="flex items-center">
+          <span class="flex-auto">닉네임</span>
+          <input class="p-2 rounded-md bg-gray-100" type="text"/>
+        </div>
+        <div class="flex items-center justify-end">
+          <button id="setting-confirm-btn" class="bg-gray-200 rounded-md py-3 px-7 text-sm mt-10">저장</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  </div>
+
   <div id="community-btn"></div>
-  <div id="setting-btn"></div>
+  <div id="setting-btn">
+    <span class="material-symbols-outlined">
+      person
+    </span>
+  </div>
     <header>
       <h1 class="h1">MOODSTACK</h1>
     </header>
@@ -110,6 +153,55 @@
     </div>
   </div>
 </div>
+<script>
+  // 마이페이지
+  const settingBtn = document.querySelector("#setting-btn");
+  settingBtn.addEventListener("click", () => {
+    const modalWrapper = document.querySelector("#setting-modal");
+    modalWrapper.classList.remove("hidden");
+    modalWrapper.classList.add("flex");
+  })
+
+  // 회원가입 폼 닫기 함수
+  function exitForm(){
+    const modalWrapper = document.querySelector("#setting-modal");
+    modalWrapper.classList.add("hidden");
+    modalWrapper.classList.remove("flex");
+  }
+
+  // 회원가입 폼 닫기 버튼
+  const exitBtn = document.querySelector("#exit-btn");
+  exitBtn.addEventListener("click", () => {
+    exitForm();
+  })
+
+  // 비밀번호 일치 검증
+  const passwordInput = document.querySelector("#password");
+  const passwordConfirmInput = document.querySelector("#password-confirm");
+  let password = "";
+
+  passwordInput.addEventListener("keypress", (e) => {
+    password = e.target.value;
+  })
+
+  passwordConfirmInput.addEventListener("keypress", (e) => {
+    let value = e.target.value;
+    const pwNo = document.querySelector("#pw-no");
+    if(password !== value) {
+      pwNo.classList.remove("hidden");
+    } else {
+      pwNo.classList.add("hidden");
+    }
+  })
+
+  // 가입 버튼
+  const settingConfirmBtn = document.querySelector("#setting-confirm-btn");
+  settingConfirmBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    exitForm();
+  })
+
+</script>
 <script src="./js/todo.js"></script>
 <script src="./js/diary.js"></script>
 <script src="./js/challenge.js"></script>

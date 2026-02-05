@@ -193,3 +193,10 @@
   @apply cursor-pointer;
 }
 
+#setting-btn {
+  @apply fixed bottom-10 right-80 w-16 h-16 rounded-full bg-black flex items-center justify-center cursor-pointer;
+}
+
+#setting-btn span {
+  @apply text-white !text-4xl;
+}
