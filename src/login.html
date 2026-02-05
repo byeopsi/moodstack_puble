@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- tailwind & main css -->
+  <link rel="stylesheet" href="../dist/tailwind.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <!-- google icon -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <title>MOODSTACK</title>
+</head>
+<body class="bg-gray-100 h-screen w-screen flex items-center justify-center">
+  <div id="login-container" class="flex flex-col gap-2 h-1/2 w-1/2 justify-center items-center">
+    <header>
+      <h1 class="h1 !m-0">MOODSTACK</h1>
+    </header>
+    <div class="flex flex-col gap-1 justify-center items-center">
+      <input class="p-2 rounded-md" type="text" placeholder="아이디"/>
+      <input class="p-2 rounded-md" type="password" placeholder="비밀번호"/>
+    </div>
+    <div class="flex justify-between gap-1">
+      <button id="login-btn" class="bg-gray-300 rounded-md py-1 px-4 text-sm" type="button">로그인</button>
+      <button id="join-btn" class="bg-gray-300 rounded-md py-1 px-4 text-sm" type="button">회원가입</button>
+    </div>
+    <div class="flex justify-end items-center gap-1">
+      <input type="checkbox"/>
+      <span class="text-sm">자동 로그인</span>
+    </div>
+  </div>
+</div>
+<div id="join-modal" class="flex flex-col justify-start items-center absolute w-1/2 h-1/2 rounded-xl bg-white z-50">
+  <div id="join-container" class="flex flex-col justify-start items-center h-full w-full ">
+    <div class="p-5 w-full text-right">
+    <span id="exit-btn" class="material-symbols-outlined">close</span>
+    </div>
+    <h2 class="mb-7 text-2xl">회원가입</h2>
+    <div class= "w-2/3">
+      <form class="flex flex-col gap-3">
+        <div class="flex items-center">
+          <span class="flex-auto">아이디</span>
+          <input class="p-2 rounded-md bg-gray-100" type="text" />
+        </div>
+        <div class="hidden justify-end">
+          <span id="id-no" class="hidden text-xs text-red-500">중복된 아이디입니다.</span>
+          <!-- <span id="id-yes" class="hidden text-xs text-green-500">사용가능한 아이디입니다.</span> -->
+        </div>
+        <div class="flex items-center">
+          <span class="flex-auto">비밀번호</span>
+          <input id="password" class="p-2 rounded-md bg-gray-100" type="password"/>
+        </div>
+        <div class="flex items-center">
+          <span class="flex-auto">비밀번호 확인</span>
+          <input id="password-confirm" class="p-2 rounded-md bg-gray-100" type="password"/>
+        </div>
+        <div id="pw-no" class="hidden justify-end">
+          <span class="flex justify-end text-xs text-red-500">비밀번호가 일치하지 않습니다.</span>
+        </div>
+        <div class="flex items-center">
+          <span class="flex-auto">닉네임</span>
+          <input class="p-2 rounded-md bg-gray-100" type="text"/>
+        </div>
+        <div class="flex items-center justify-end">
+          <button id="join-confirm-btn" class="bg-gray-200 rounded-md py-3 px-7 text-sm mt-10">가입</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script>
+  // 로그인 버튼
+  const loginBtn = document.querySelector("#login-btn");
+  loginBtn.addEventListener("click", () => {
+    window.location.href="./index.html";
+  })
+
+  // 회원가입 버튼
+  const joinBtn = document.querySelector("#join-btn");
+  joinBtn.addEventListener("click", () => {
+    const modalWrapper = document.querySelector("#join-modal");
+    modalWrapper.classList.remove("hidden");
+    modalWrapper.classList.add("flex");
+  })
+
+  // 회원가입 폼 닫기 함수
+  function exitForm(){
+    const modalWrapper = document.querySelector("#join-modal");
+    modalWrapper.classList.add("hidden");
+    modalWrapper.classList.remove("flex");
+  }
+
+  // 회원가입 폼 닫기 버튼
+  const exitBtn = document.querySelector("#exit-btn");
+  exitBtn.addEventListener("click", () => {
+    exitForm();
+  })
+
+  // 비밀번호 일치 검증
+  const passwordInput = document.querySelector("#password");
+  const passwordConfirmInput = document.querySelector("#password-confirm");
+  let password = "";
+
+  passwordInput.addEventListener("keypress", (e) => {
+    password = e.target.value;
+  })
+
+  passwordConfirmInput.addEventListener("keypress", (e) => {
+    let value = e.target.value;
+    const pwNo = document.querySelector("#pw-no");
+    if(password !== value) {
+      pwNo.classList.remove("hidden");
+    } else {
+      pwNo.classList.add("hidden");
+    }
+  })
+
+  // 가입 버튼
+  const joinConfirmBtn = document.querySelector("#join-confirm-btn");
+  joinConfirmBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    exitForm();
+  })
+
+</script>
+</body>
+</html>
